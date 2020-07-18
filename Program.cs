@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using System.Xml;
 
 namespace alluberes.clases02.prueba2
 {
@@ -13,11 +14,15 @@ namespace alluberes.clases02.prueba2
             //pruebas001();
             //prueba002();
             //prueba003();
-            // preuba004();
-            // prueba005();
+            //preuba004();
+            //prueba005();
 
             /// prueba006();
-            prueba007();
+            // prueba007();
+            // prueba008();
+            // prueba009();
+            // prueba010();
+            prueba011();
 
             // Console.WriteLine("Hello World!");
             Console.Read();
@@ -224,6 +229,112 @@ namespace alluberes.clases02.prueba2
 
         }
 
+        static void prueba008()
+        {
+            Console.WriteLine("condiciones if");
+
+            var isInHome = false;
+            var puertaAbierta = false;
+
+            Console.WriteLine($"Antuane está en la casa? {isInHome}");
+            Console.WriteLine($"Puerta abierta? {puertaAbierta}");
+
+
+            Console.WriteLine("Santiago está");
+            if (isInHome)
+            {
+                Console.WriteLine(" entrando a la casa");
+
+
+
+            } else if (puertaAbierta)
+            {
+                Console.WriteLine(" entra a la casa y se come el queso de la nevera");
+            } else
+            {
+                
+                Console.WriteLine(" esperando hasta que llegue alguien...");
+
+            }
+
+        }
+
+        static void prueba009()
+        {
+            var valor1 = 1;
+
+            if (valor1 != 2)
+            {
+                valor1 = 1;
+                // Console.WriteLine("Valor1 tiene UNO como valor...");
+                Console.WriteLine("--- no es uno-- ");
+            }
+
+            if (valor1 == 1)
+            {
+                Console.WriteLine("esta ves si, Valor1 tiene UNO como valor...");
+            }
+
+            //var valor2 = (valor1 == 1);
+
+            //Console.WriteLine($"valor1 = {valor1} \nvalor2 = {valor2}");
+
+
+        }
+
+        static void prueba010()
+        {
+            Carro carro = new Carro();
+
+            if (carro is null)
+            {
+                Console.WriteLine("La variable carro es nula");
+            }
+
+            Console.WriteLine($"Color: {carro.Color}" ); 
+        }
+
+        static void prueba011()
+        {
+
+            Carro carro1 = new Carro();
+            Carro carro2 = new Carro();
+
+            int val1 = 1;
+            int val2 = 2;
+
+            carro1.Color = "Color 1";
+            carro2.Color = "Color 2";
+
+            if (carro1 == carro2)
+            {
+                Console.WriteLine("Es el mismo carro");
+            } 
+            else
+            {
+                Console.WriteLine($"No es el mismo carro \nCarro 1 : {carro1.Color} \nCarro 2: {carro2.Color}");
+            }
+
+
+            carro1 = carro2;
+
+            if (carro1 == carro2)
+            {
+                Console.WriteLine("Es el mismo carro");
+            }
+            else
+            {
+                Console.WriteLine($"No es el mismo carro \nCarro 1 : {carro1.Color} \nCarro 2: {carro2.Color}");
+            }
+
+
+            carro2.Color = "Negro";
+            Console.WriteLine($"COLORES \nCarro 1 : {carro1.Color} \nCarro 2: {carro2.Color}");
+
+
+
+
+        }
     }
 
     class Carro
